@@ -58,3 +58,11 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Some Legal Changes
+
+**/ERP
+**/Buttons
+**/FreeButtonSet
+**/Brackeys
+**/ParallaxDuskMountainBackgroundArtwork
+*.erp
