@@ -22,6 +22,7 @@ public class ClickerUI : MonoBehaviour
         }
         if(cholipkiToK != 0 && cholipkiToM == 0)
         {
+            cholipkiToK = Math.Round(cholipkiToK, 2);
             counterText.text = $"Cholipki: {cholipkiToK}K";
         }
         

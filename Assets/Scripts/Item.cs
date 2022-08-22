@@ -9,4 +9,6 @@ public class Item : ScriptableObject
     public string ItemName;
     public int ItemPower;
     public int ItemPrice;
+    public int ItemPriceToM;
+    public int ItemPowerToM;
 }

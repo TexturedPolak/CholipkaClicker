@@ -15,3 +15,5 @@ MonoBehaviour:
   ItemName: Mugol
   ItemPower: 1
   ItemPrice: 20
+  ItemPriceToM: 0
+  ItemPowerToM: 0

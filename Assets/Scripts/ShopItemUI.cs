@@ -14,15 +14,31 @@ public class ShopItemUI : MonoBehaviour
 
     public void UpdateUI(Item item)
     {
-        nameText.text = item.name;
-        powerText.text = "+ " + item.ItemPower.ToString() + " do kliku";
-        if(item.name == "Cholipka")
+        if(item.ItemPowerToM == 0 && item.ItemPriceToM == 0)
         {
-            powerText.text = "End Game";
-        }
-        priceText.text = item.ItemPrice.ToString();
+            nameText.text = item.name;
+            powerText.text = "+ " + item.ItemPower.ToString() + " do kliku";
+            if (item.name == "Cholipka")
+            {
+                powerText.text = "End Game";
+            }
+            priceText.text = item.ItemPrice.ToString();
 
-        buyButton.onClick.AddListener(delegate { BuyFunction(item.ItemPrice, item.ItemPower); });
+            buyButton.onClick.AddListener(delegate { BuyFunction(item.ItemPrice, item.ItemPower); });
+        }
+        if(item.ItemPowerToM != 0 && item.ItemPriceToM != 0)
+        {
+            nameText.text = item.name;
+            powerText.text = "+ " + item.ItemPower.ToString() + "M do kliku";
+            if (item.name == "Cholipka")
+            {
+                powerText.text = "End Game";
+            }
+            priceText.text = item.ItemPriceToM.ToString() +"M";
+
+            buyButton.onClick.AddListener(delegate { BuyFunction(item.ItemPrice, item.ItemPower); });
+        }
+        
     }
 
     private void BuyFunction(int ItemPrice, int ItemPower)

@@ -340,8 +340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -573, y: -126}
-  m_SizeDelta: {x: 233.703, y: 100}
+  m_AnchoredPosition: {x: -408, y: 0}
+  m_SizeDelta: {x: 522.4288, y: 235.533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151381533
 MonoBehaviour:
@@ -1332,6 +1332,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8dee75af042bdf9459a6f3ca3a3bebdc, type: 2}
   cholipkiToK: 0
   cholipkiToM: 0
+  ItemPriceToM: 0
   cholipkiPerClick: 1
 --- !u!4 &894667136
 Transform:

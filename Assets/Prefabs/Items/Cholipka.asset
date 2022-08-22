@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Cholipka
   m_EditorClassIdentifier: 
   ItemName: Cholipka
-  ItemPower: 2137
+  ItemPower: 50000
   ItemPrice: 50000
+  ItemPriceToM: 0
+  ItemPowerToM: 0

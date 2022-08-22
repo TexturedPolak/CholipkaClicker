@@ -20,6 +20,7 @@ public class ClickerManager : MonoBehaviour
     public double cholipkiToK = 0;
     public double cholipkiToM = 0;
     private double cholipki = 0;
+    public int ItemPriceToM = 0;
     [Header("Other")]
     public double cholipkiPerClick = 1;
     public static UnityEvent<int, int> OnItemBought = new UnityEvent<int, int>();
@@ -41,12 +42,30 @@ public class ClickerManager : MonoBehaviour
 
     private void BuyItem(int ItemPrice, int ItemPower)
     {
+        
         if(ItemPrice < 1000)
         {
             if (ItemPrice <= cholipki)
             {
                 cholipkiPerClick += ItemPower;
                 cholipki -= ItemPrice;
+                clickerUi.UpdateUI(cholipki, cholipkiToK, cholipkiToM);
+            }
+            if (ItemPrice <= cholipkiToK * 1000)
+            {
+                ItemPrice = ItemPrice / 1000;
+                cholipkiPerClick += ItemPower;
+                cholipkiToK -= ItemPrice;
+                clickerUi.UpdateUI(cholipki, cholipkiToK, cholipkiToM);
+            }
+            if (ItemPrice >= 1000000)
+            {
+                ItemPriceToM = ItemPrice / 1000000;
+            }
+            if(ItemPriceToM <= cholipkiToM)
+            {
+                cholipkiPerClick += ItemPower;
+                cholipkiToK -= ItemPriceToM;
                 clickerUi.UpdateUI(cholipki, cholipkiToK, cholipkiToM);
             }
         }
@@ -57,6 +76,17 @@ public class ClickerManager : MonoBehaviour
             {
                 cholipkiPerClick += ItemPower;
                 cholipkiToK -= ItemPrice;
+                clickerUi.UpdateUI(cholipki, cholipkiToK, cholipkiToM);
+            }
+        }
+        if(ItemPrice >= 1000000)
+        {
+
+            ItemPrice = ItemPrice / 1000000;
+            if (ItemPrice <= cholipkiToK)
+            {
+                cholipkiPerClick += ItemPower;
+                cholipkiToM -= ItemPrice;
                 clickerUi.UpdateUI(cholipki, cholipkiToK, cholipkiToM);
             }
         }
